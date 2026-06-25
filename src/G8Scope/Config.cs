@@ -20,6 +20,15 @@ public sealed class Config
     /// <summary>HTTP timeout in milliseconds.</summary>
     public int TimeoutMs { get; set; } = 3000;
 
+    /// <summary>Maximum number of transport retries after the first attempt.</summary>
+    public int MaxRetries { get; set; } = 2;
+
+    /// <summary>Base backoff delay in milliseconds for the exponential schedule.</summary>
+    public int RetryBaseMs { get; set; } = 100;
+
+    /// <summary>Hard cap on any single backoff delay, in milliseconds.</summary>
+    public int RetryCapMs { get; set; } = 2000;
+
     /// <summary>Maximum number of stack frames to capture.</summary>
     public int MaxFrames { get; set; } = 30;
 
