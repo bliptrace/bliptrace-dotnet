@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <PackageId>G8Scope</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Developers Hub Sdn Bhd</Authors>
+    <Company>Developers Hub Sdn Bhd</Company>
+    <Description>Runtime .NET SDK for g8scope — builds a language-neutral error envelope and ships it to the g8scope ingest API. Never throws into the host app.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/developers-hub-my/g8scope-dotnet</RepositoryUrl>
+    <PackageTags>g8scope;error-tracking;observability;telemetry</PackageTags>
+  </PropertyGroup>
+
+</Project>
