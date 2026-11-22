@@ -12,7 +12,7 @@
     <Company>Developers Hub Sdn Bhd</Company>
     <Description>Runtime .NET SDK for g8scope — builds a language-neutral error envelope and ships it to the g8scope ingest API. Never throws into the host app.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <RepositoryUrl>https://github.com/developers-hub-my/g8scope-dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/bliptrace/bliptrace-dotnet</RepositoryUrl>
     <PackageTags>g8scope;error-tracking;observability;telemetry</PackageTags>
   </PropertyGroup>
 
