@@ -2,7 +2,7 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// Default transport: POSTs the envelope to <c>{endpoint}/v1/ingest</c> using

@@ -1,4 +1,4 @@
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// SDK configuration. Framework adapters build this from their own config.
@@ -48,7 +48,7 @@ public sealed class Config
     public bool Enabled { get; set; } = true;
 
     /// <summary>SDK name reported in the envelope.</summary>
-    public string SdkName { get; set; } = "g8scope-dotnet";
+    public string SdkName { get; set; } = "bliptrace-dotnet";
 
     /// <summary>SDK version reported in the envelope.</summary>
     public string SdkVersion { get; set; } = "1.0.0";

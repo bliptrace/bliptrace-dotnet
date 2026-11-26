@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// Client-side PII scrub: redact configured keys (case-insensitive) before sending.

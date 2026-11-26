@@ -1,10 +1,10 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
-/// Builds the language-neutral g8scope error envelope from an <see cref="Exception"/>.
+/// Builds the language-neutral Bliptrace error envelope from an <see cref="Exception"/>.
 /// </summary>
 public static class Envelope
 {

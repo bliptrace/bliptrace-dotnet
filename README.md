@@ -1,8 +1,8 @@
-# g8scope .NET SDK
+# Bliptrace .NET SDK
 
-The runtime **.NET / C#** SDK for [g8scope](https://scope.g8suite.com) — a central,
+The runtime **.NET / C#** SDK for [Bliptrace](https://bliptrace.com) — a central,
 multi-tenant error-capture and observability platform. The SDK builds a
-language-neutral *error envelope* from an `Exception` and ships it to the g8scope
+language-neutral *error envelope* from an `Exception` and ships it to the bliptrace
 ingest API.
 
 It is designed to be invisible to the host application: **capture never throws**,
@@ -11,15 +11,15 @@ and a slow or unreachable ingest endpoint will never slow your app down.
 ## Installation
 
 ```bash
-dotnet add package G8Scope
+dotnet add package Bliptrace
 ```
 
 ## Usage
 
 ```csharp
-using G8Scope;
+using Bliptrace;
 
-var client = new G8ScopeClient(new Config
+var client = new BliptraceClient(new Config
 {
     Key = "your-ingest-key",                 // required; without it the SDK does nothing
     Endpoint = "https://ingest.scope.g8suite.com",
@@ -76,14 +76,14 @@ if (envelope != null)
 | `ScrubKeys`         | `[]`                                     | Context keys (case-insensitive) to redact.             |
 | `BasePath`          | `""`                                     | Application base path for in-app frame detection.      |
 | `Enabled`           | `true`                                   | Master switch.                                         |
-| `SdkName`           | `g8scope-dotnet`                         | SDK name reported in the envelope.                     |
+| `SdkName`           | `bliptrace-dotnet`                         | SDK name reported in the envelope.                     |
 | `SdkVersion`        | `1.0.0`                                  | SDK version reported in the envelope.                  |
 
 ## PII scrubbing
 
 Configured keys are redacted to `[REDACTED]` (case-insensitive) before the
 envelope leaves your process. Scrubbing recurses into nested dictionaries and
-enumerables. Note that g8scope also scrubs server-side, but client-side scrubbing
+enumerables. Note that Bliptrace also scrubs server-side, but client-side scrubbing
 keeps sensitive values off the wire entirely.
 
 ## Anti-spoofing

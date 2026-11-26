@@ -1,7 +1,7 @@
-using G8Scope;
+using Bliptrace;
 using Xunit;
 
-namespace G8Scope.Tests;
+namespace Bliptrace.Tests;
 
 /// <summary>
 /// Subclasses <see cref="HttpTransport"/> to script per-attempt HTTP results and

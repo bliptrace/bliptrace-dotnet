@@ -1,9 +1,9 @@
 using System.Text.Json.Serialization;
 
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
-/// Typed, serialisable representation of the g8scope error envelope.
+/// Typed, serialisable representation of the Bliptrace error envelope.
 /// Property names map to the wire contract via <see cref="JsonPropertyNameAttribute"/>.
 /// NOTE: <c>project</c> is intentionally absent — it is resolved server-side from
 /// the ingest key, so a client cannot spoof another tenant.

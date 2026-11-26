@@ -1,4 +1,4 @@
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// The runtime .NET client: decide whether to capture, build + scrub the envelope,
@@ -6,13 +6,13 @@ namespace G8Scope;
 /// <see cref="BuildEnvelope"/> / <see cref="SendEnvelope"/> to defer the send.
 /// This client MUST never throw into the host application.
 /// </summary>
-public sealed class G8ScopeClient
+public sealed class BliptraceClient
 {
     private readonly Config _config;
     private readonly ITransport _transport;
     private readonly Scrubber _scrubber;
 
-    public G8ScopeClient(Config config, ITransport? transport = null, Scrubber? scrubber = null)
+    public BliptraceClient(Config config, ITransport? transport = null, Scrubber? scrubber = null)
     {
         _config = config;
         _transport = transport ?? new HttpTransport();

@@ -1,8 +1,8 @@
 using System.Text.RegularExpressions;
-using G8Scope;
+using Bliptrace;
 using Xunit;
 
-namespace G8Scope.Tests;
+namespace Bliptrace.Tests;
 
 /// <summary>Records envelopes instead of shipping them over the network.</summary>
 public sealed class FakeTransport : ITransport
@@ -33,7 +33,7 @@ public class ClientTest
     public void BuildsAndShipsAValidEnvelope()
     {
         var transport = new FakeTransport();
-        var client = new G8ScopeClient(
+        var client = new BliptraceClient(
             new Config { Key = "k", Endpoint = "http://api" },
             transport);
 
@@ -45,7 +45,7 @@ public class ClientTest
         Assert.Equal("1.0", env.SchemaVersion);
         Assert.Matches(new Regex("^[0-9a-f-]{36}$"), env.EventId);
         Assert.Equal("dotnet", env.Runtime.Name);
-        Assert.Equal("g8scope-dotnet", env.Sdk.Name);
+        Assert.Equal("bliptrace-dotnet", env.Sdk.Name);
         Assert.Equal("1.0.0", env.Sdk.Version);
         Assert.Equal("error", env.Level);
         Assert.Equal("System.InvalidOperationException", env.Exception.Type);
@@ -63,7 +63,7 @@ public class ClientTest
     public void OccurredAtIsRfc3339WithMillisecondPrecision()
     {
         var transport = new FakeTransport();
-        new G8ScopeClient(new Config { Key = "k" }, transport).Capture(ThrownException());
+        new BliptraceClient(new Config { Key = "k" }, transport).Capture(ThrownException());
 
         var occurredAt = transport.Sent[0].Envelope.OccurredAt;
         Assert.Matches(new Regex(@"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$"), occurredAt);
@@ -73,7 +73,7 @@ public class ClientTest
     public void IgnoresConfiguredExceptionTypes()
     {
         var transport = new FakeTransport();
-        var client = new G8ScopeClient(
+        var client = new BliptraceClient(
             new Config
             {
                 Key = "k",
@@ -91,8 +91,8 @@ public class ClientTest
     {
         var transport = new FakeTransport();
 
-        new G8ScopeClient(new Config { Key = null }, transport).Capture(ThrownException());
-        new G8ScopeClient(new Config { Key = "k", Enabled = false }, transport).Capture(ThrownException());
+        new BliptraceClient(new Config { Key = null }, transport).Capture(ThrownException());
+        new BliptraceClient(new Config { Key = "k", Enabled = false }, transport).Capture(ThrownException());
 
         Assert.Empty(transport.Sent);
     }
@@ -101,7 +101,7 @@ public class ClientTest
     public void ScrubsSensitiveContextBeforeSending()
     {
         var transport = new FakeTransport();
-        var client = new G8ScopeClient(
+        var client = new BliptraceClient(
             new Config { Key = "k", ScrubKeys = new List<string> { "password" } },
             transport);
 
@@ -143,7 +143,7 @@ public class ClientTest
     public void NeverThrowsEvenIfContextIsWeird()
     {
         var transport = new FakeTransport();
-        var client = new G8ScopeClient(new Config { Key = "k" }, transport);
+        var client = new BliptraceClient(new Config { Key = "k" }, transport);
 
         var exception = Record.Exception(() => client.Capture(
             ThrownException(),
@@ -172,7 +172,7 @@ public class ClientTest
             ex = e;
         }
 
-        new G8ScopeClient(new Config { Key = "k", MaxMessage = 100 }, transport).Capture(ex);
+        new BliptraceClient(new Config { Key = "k", MaxMessage = 100 }, transport).Capture(ex);
 
         Assert.Equal(100, transport.Sent[0].Envelope.Exception.Message.Length);
     }
@@ -182,7 +182,7 @@ public class ClientTest
     {
         // The EnvelopeModel has no project member; assert no such JSON property serialises.
         var transport = new FakeTransport();
-        new G8ScopeClient(new Config { Key = "k" }, transport).Capture(ThrownException());
+        new BliptraceClient(new Config { Key = "k" }, transport).Capture(ThrownException());
 
         var json = System.Text.Json.JsonSerializer.Serialize(transport.Sent[0].Envelope);
         Assert.DoesNotContain("\"project\"", json);

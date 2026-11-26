@@ -1,4 +1,4 @@
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// Decides whether a failed ingest attempt should be retried, and how long to wait.

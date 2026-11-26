@@ -1,4 +1,4 @@
-namespace G8Scope;
+namespace Bliptrace;
 
 /// <summary>
 /// Ships an envelope to the ingest API. Implementations MUST never throw.

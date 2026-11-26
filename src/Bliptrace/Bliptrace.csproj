@@ -6,14 +6,14 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
 
-    <PackageId>G8Scope</PackageId>
+    <PackageId>Bliptrace</PackageId>
     <Version>1.0.0</Version>
     <Authors>Developers Hub Sdn Bhd</Authors>
     <Company>Developers Hub Sdn Bhd</Company>
-    <Description>Runtime .NET SDK for g8scope — builds a language-neutral error envelope and ships it to the g8scope ingest API. Never throws into the host app.</Description>
+    <Description>Runtime .NET SDK for Bliptrace — builds a language-neutral error envelope and ships it to the Bliptrace ingest API. Never throws into the host app.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/bliptrace/bliptrace-dotnet</RepositoryUrl>
-    <PackageTags>g8scope;error-tracking;observability;telemetry</PackageTags>
+    <PackageTags>bliptrace;error-tracking;observability;telemetry</PackageTags>
   </PropertyGroup>
 
 </Project>

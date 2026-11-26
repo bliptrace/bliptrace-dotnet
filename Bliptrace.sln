@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A3977C61-5C49-4AE6-985F-3B501DD38CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8Scope", "src\G8Scope\G8Scope.csproj", "{051DA6AF-0C29-4FBD-9377-6F95AB82DA28}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bliptrace", "src\Bliptrace\Bliptrace.csproj", "{051DA6AF-0C29-4FBD-9377-6F95AB82DA28}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AF33A069-2FCA-4A08-8874-66298A820A36}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "G8Scope.Tests", "test\G8Scope.Tests\G8Scope.Tests.csproj", "{FD2E694F-99A5-45C8-9076-97C5D921E483}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bliptrace.Tests", "test\Bliptrace.Tests\Bliptrace.Tests.csproj", "{FD2E694F-99A5-45C8-9076-97C5D921E483}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
