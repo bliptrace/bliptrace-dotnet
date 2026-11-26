@@ -9,7 +9,7 @@ public sealed class Config
     public string? Key { get; set; }
 
     /// <summary>Ingest API base URL. The SDK POSTs to <c>{Endpoint}/v1/ingest</c>.</summary>
-    public string Endpoint { get; set; } = "https://ingest.scope.g8suite.com";
+    public string Endpoint { get; set; } = "https://ingest.bliptrace.com";
 
     /// <summary>Deployment environment, e.g. production, staging, local.</summary>
     public string Environment { get; set; } = "production";

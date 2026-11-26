@@ -22,7 +22,7 @@ using Bliptrace;
 var client = new BliptraceClient(new Config
 {
     Key = "your-ingest-key",                 // required; without it the SDK does nothing
-    Endpoint = "https://ingest.scope.g8suite.com",
+    Endpoint = "https://ingest.bliptrace.com",
     Environment = "production",
     Release = "my-app@2026.06.21",
     BasePath = "/srv/app",                    // used to mark in-app stack frames
@@ -66,7 +66,7 @@ if (envelope != null)
 | Property            | Default                                  | Description                                            |
 |---------------------|------------------------------------------|--------------------------------------------------------|
 | `Key`               | `null`                                   | Ingest key. Without it the SDK does nothing.           |
-| `Endpoint`          | `https://ingest.scope.g8suite.com`       | Base URL; the SDK POSTs to `{Endpoint}/v1/ingest`.     |
+| `Endpoint`          | `https://ingest.bliptrace.com`       | Base URL; the SDK POSTs to `{Endpoint}/v1/ingest`.     |
 | `Environment`       | `production`                             | Deployment environment.                                |
 | `Release`           | `null`                                   | Release marker.                                        |
 | `TimeoutMs`         | `3000`                                   | HTTP timeout in milliseconds.                          |
